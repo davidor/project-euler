@@ -3,7 +3,7 @@
 
 sum = sum_of_squares = 0
 (1..100).each do |x|
-	sum += x
-	sum_of_squares += x**2
+    sum += x
+    sum_of_squares += x**2
 end
 puts sum**2 - sum_of_squares
