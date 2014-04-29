@@ -6,12 +6,12 @@ require 'prime'
 consecutives = first_consecutive = 0
 x = 1
 while consecutives < 4
-	if Prime.prime_division(x).length == 4
-		consecutives += 1
-		first_consecutive = x if consecutives == 1
-	else 
-		consecutives = 0
-	end
-	x += 1
+    if Prime.prime_division(x).length == 4
+        consecutives += 1
+        first_consecutive = x if consecutives == 1
+    else 
+        consecutives = 0
+    end
+    x += 1
 end
 puts first_consecutive
