@@ -4,13 +4,13 @@
 # Find the product abc.
 
 (1..998).each do |a|
-	(a+1..998).each do |b|
-		(b+1..998).each do |c|
-			if (a + b + c == 1000) and (a**2 + b**2 == c**2)
-				puts a*b*c
-				exit
-			end
-		end
-	end
+    (a+1..998).each do |b|
+        (b+1..998).each do |c|
+            if (a + b + c == 1000) and (a**2 + b**2 == c**2)
+                puts a*b*c
+                exit
+            end
+        end
+    end
 end
 

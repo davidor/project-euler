@@ -7,8 +7,8 @@ end
 
 answer = 0
 (1..100).each do |n|
-	(1..n).each do |r|
-		answer += 1 if fact(n)/(fact(r)*fact(n - r)) > 1000000
-	end
+    (1..n).each do |r|
+        answer += 1 if fact(n)/(fact(r)*fact(n - r)) > 1000000
+    end
 end
 puts answer
