@@ -5,8 +5,8 @@
 
 d = "0"
 (1..Float::INFINITY).each do |x|
-	d += x.to_s
-	break if d.size > 10**6
+    d += x.to_s
+    break if d.size > 10**6
 end
 
 mult_digits = [d[1], d[10], d[10**2], d[10**3], d[10**4], d[10**5], d[10**6]]
