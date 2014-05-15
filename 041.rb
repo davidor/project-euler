@@ -5,7 +5,7 @@ require 'prime'
 (1..9).to_a.reverse.each do |digits|
     permutations = (1..digits).to_a.reverse.permutation
     result = permutations.detect { |perm| perm.join.to_i.prime? }
-    if not result.nil?
+    unless result.nil?
         puts result.join
         exit
     end
