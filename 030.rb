@@ -2,7 +2,7 @@
 # of their digits.
 
 def equals_sum_of_5_powers?(n)
-    n == (n.to_s.split("").inject(0) { |sum, digit| sum += digit.to_i**5 })
+    n == (n.to_s.split("").map { |digit| digit.to_i**5 }.reduce(:+))
 end
 
 # The upper limit is 6*9^5 = 354294
