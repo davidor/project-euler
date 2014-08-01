@@ -10,11 +10,9 @@
 require 'net/http'
 
 def get_score(name, index)
-    index*(name.split("").inject(0) { |sum, char| sum += char.ord - 'A'.ord + 1 })
+    index*(name.split("").map { |char| char.ord - 'A'.ord + 1 }.reduce(:+))
 end
 
 uri = URI("https://projecteuler.net/project/names.txt")
 names = Net::HTTP.get(uri).split(",").collect { |name| name[1..-2]}.sort
-total = 0
-names.each_with_index { |name, index| total += get_score(name, index + 1) }
-puts total
+puts names.each_with_index.map { |name, index| get_score(name, index + 1) }.reduce(:+)
