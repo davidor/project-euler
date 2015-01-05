@@ -10,11 +10,11 @@
        (count)
        (* 2)))
 
-(defn triangle-number [n]
-  (/ (* n (+ n 1)) 2))
+(defn triangle [n]
+  (/ (* n (inc n)) 2))
+
+(def triangle-numbers (map triangle (iterate inc 1)))
 
 (defn problem-012 []
-  (->> (iterate inc 1)
-       (map triangle-number)
-       (drop-while #(<= (count-divisors %) 500))
+  (->> (drop-while #(<= (count-divisors %) 500) triangle-numbers)
        (first)))
